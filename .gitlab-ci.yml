@@ -1,0 +1,13 @@
+latex-tester: # test de la génération du rapport et des slides avec latexmk, à modifier si besoin
+        image: lnussbaum/stretch-texlive
+        script:
+                - apt-get update && apt-get -y install texlive latexmk make
+                - make
+        artifacts:
+                paths:
+                        - rapport.pdf
+                        - slides.pdf
+
+your-own-test: # feel free to modify this test and add more
+        script:
+                - ls
