@@ -1,6 +1,166 @@
 \documentclass{beamer}
+
+\mode<presentation> {
+  \usetheme{Warsaw}
+  \setbeamercovered{transparent}
+}
+
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+
+
+\title{Le Grand Londres \textbf{Beamer}}
+
+\author{ASRALL 2017 -\LaTeX}
+
+\date{IUT Nancy-Charlemagne} %
+
+\subject{Outils libres}
+
+\pgfdeclareimage[height=0.8cm]{university-logo}{logo}
+\logo{\includegraphics[width=8mm]{./img-slides/un.jpg}}
+
+
+
+%\beamerdefaultoverlayspecification{<+->}
+
 \begin{document}
-  \begin{frame}
-   Test
- \end{frame}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Plan}
+  \tableofcontents[pausesections]
+\end{frame}
+
+
+\section{Introduction}
+
+\subsection{Londres}
+
+\subsection{Définition de Londres}
+
+\begin{frame}
+    \frametitle{Introduction}
+%\begin{block}{Général}
+Londres, située dans le sud-est de la Grande-Bretagne, est la capitale et la plus grande ville de l'Angleterre et du Royaume-Uni. Longtemps capitale de l'Empire britannique, elle est désormais le siège du Commonwealth of Nations
+%\end{block}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{./img-slides/londres.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+ \begin{column}{0.55\textwidth}
+\begin{block}{Sites d'intérêt}
+    \begin{enumerate}[<+-| alert@+>]
+      \item  Big Ben
+      \item  Le soir dans la ville
+      \item  St. Pancras
+    \end{enumerate}
+\end{block}
+ \end{column} \ \
+ \begin{column}{0.40\textwidth}
+      \only<1>{\includegraphics[width=0.8\textwidth]{./img-slides/deux.jpg}}
+      \only<2>{\includegraphics[width=0.9\textwidth]{./img-slides/trois.jpg}}
+      \only<3>{\includegraphics[width=0.9\textwidth]{./img-slides/quatre.jpg}}
+ \end{column}
+\end{columns}
+\end{frame}
+
+\section{Géographie}
+
+\subsection{Relief et hydrographie}
+
+\begin{frame}
+    \frametitle{Relief et hydrographie}
+\begin{block}{}
+La dénomination courante Londres peut désigner plusieurs ensembles géographiques ou administratifs différents, pouvant parfois porter à confusion.
+\end{block}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./img-slides/relief.jpg}
+\end{center}
+
+\end{frame}
+
+
+\subsection{Quartiers}
+
+\begin{frame}
+    \frametitle{Quartiers}
+\begin{block}{}
+On décrit souvent Londres par quartiers (Bloomsbury, Mayfair, Whitechapel par exemple). Ces noms n'ont pas d'utilisation officielle mais désignent souvent des paroisses et sont restés en usage par tradition.
+\end{block}
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{./img-slides/londres.jpg}
+\caption{Bloomsbury} 
+\end{figure}
+\end{center}
+
+\end{frame}
+
+\section{Histoire}
+
+\begin{frame}
+Les régions aux alentours de Londres (aujourd'hui situées à l'intérieur des frontières du Grand Londres) tissent une première ville24. Ce premier campement est appelé Londinium. 
+\end{frame}
+
+\subsection{Londres à l'époque romaine}
+
+\begin{frame}
+La position privilégiée de la ville sur la Tamise en fait un lieu stratégique et vers l'an 600, les Anglo-Saxons fondent une nouvelle ville, Lundenwic, à environ 1 km en amont de la ville romaine, à l'endroit où se trouve aujourd'hui Covent Garden. Un port de pêche et de commerce est probablement localisé à l'embouchure de la rivière Fleet. Lundenwic prospère jusqu'en 851, lorsque la ville est envahie et complètement rasée par les Vikings.
+\end{frame}
+
+\section{Connaître la ville}
+
+\begin{frame}[fragile]
+\frametitle{Vidéo}
+
+\end{frame}
+
+\section{Mathématiques}
+
+\subsection{Un peu de maths}
+
+\begin{frame}
+\frametitle{Équations complexes}
+\begin{block}{}
+Là-dessous, une équation complexe étape par étape :
+\end{block}
+
+\begin{block}{Équation}
+$\displaystyle
+V(x) = \onslide<2->{\color<2>[rgb]{1,0,0} A\int_0^\infty\frac{dr}{r} +}
+\onslide<3->{\color<3>[rgb]{0,1,0} B\int_0^\infty\frac{dr}{r^2} +}
+\onslide<4->{\color<4>[rgb]{0,0,1} C\int_0^\infty\left(\frac{1}{r^6} - \frac{1}{r^{12}}\right)dx}$
+
+\medskip
+\hspace*{15mm} \onslide<2>{\color<2>[rgb]{1,0,0} Dipolo} \hspace{7mm}
+\onslide<3>{\color<3>[rgb]{0,1,0} Coulomb} \hspace{4mm}
+\onslide<4>{\color<4>[rgb]{0,0,1} Van der Waals}
+\end{block}
+\end{frame}
+
+
+
 \end{document}
+
+\usetheme{default}
+\usetheme{JuanLesPins}
+\usetheme{Goettingen}
+\usetheme{Szeged}
+\usetheme{Warsaw}
+
+\usecolortheme{crane}
+
+\usefonttheme{serif}
+\usefonttheme{structuresmallcapsserif}
