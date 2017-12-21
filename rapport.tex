@@ -10,9 +10,21 @@
 \usepackage{colortbl}
 \usepackage{fancyhdr}
 \usepackage{mathtools}
+\usepackage{smartdiagram}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+\tikzset{
+  basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
+  root/.style   = {basic, rounded corners=2pt, thin, align=center,
+                   fill=yellow!30},
+  level 2/.style = {basic, rounded corners=6pt, thin,align=center, fill=green!30,
+                   text width=8em},
+  level 3/.style = {basic, thin, align=left, fill=gray!60, text width=6.5em}
+}
 
 \pagestyle{empty}
-
+    
 \marginsize{2.5cm}{2.5cm}{2.5cm}{2.5cm}
 \fancyhead[RO,LE]{Le grand Londres}
 \fancyhead[RE,LO]{ASRALL 2017 - \LaTeX}
@@ -256,7 +268,7 @@ La région du Grand Londres occupe une superficie de 1 572 km2 et la densité de
 
 \begin{table}
 \begin{center}
-\resizebox{5cm}{!}{
+\resizebox{10cm}{!}{
 \begin{tabular}{|l|r|}
     \hline
     Pays de naissance & Population (2011) \\
@@ -312,6 +324,78 @@ L'économie de Londres s'est orientée vers les services beaucoup plus tôt que 
 \textit{Londres bénéficie de son statut de capitale anglophone en Europe et attire ainsi chaque année de très nombreux étudiants du continent venus apprendre la langue anglaise. Une importante économie du tourisme estudiantin s'est développée autour de cette manne, certains n'hésitant pas à en profiter par des pratiques à la limite de la légalité.}
 
 Les principaux sites touristiques londoniens sont concentrés dans le \textsc{West End}, qui comprend les grands magasins d’Oxford Street, les théâtres, et les quartiers tels que \textsc{Soho, Covent Garden, Mayfair, Piccadilly Circus} et la place de Leicester Square. Les monuments les plus célèbres de Londres sont \textsc{le British Museum, la Tate Gallery, le Tate Modern, Madame Tussauds, les palais de Westminster et de Buckingham, l’Imperial War Museum, le Science Museum, la National Gallery, la National Portrait Gallery, la Tower Bridge, Big Ben, la Tour de Londres, London Eye, Cathédrale St Paul et Arsenal Football Club Museum}.
+
+\newpage
+
+\section{Mexique}
+\subsection{Un peu de l'histoire de Mexique}
+\ \\ 
+\begin{center}
+\smartdiagram[descriptive diagram]{
+  {1810,{Independance de Mexique de l'Espagne}},
+  {1862, {Bataille de Puebla contre la France}},
+  {1910, Révolution de Mexique},
+  {1917, Création de la Constitution Mexicaine actuelle}}
+
+\end{center}
+
+\newpage
+\subsection{Connaître le Mexique}
+\ \\
+\begin{center}
+\begin{tikzpicture}[
+  level 1/.style={sibling distance=40mm},
+  edge from parent/.style={->,draw},
+  >=latex]
+
+\node[root] {MEXIQUE}
+  child {node[level 2] (c1) {Villes les plus importantes}}
+  child {node[level 2] (c2) {Plats typiques}}
+  child {node[level 2] (c3) {Sites d'intérêt}};
+
+\begin{scope}[every node/.style={level 3}]
+\node [below of = c1, xshift=15pt] (c11) {Mexico};
+\node [below of = c11] (c12) {Monterrey};
+\node [below of = c12] (c13) {Guadalajara};
+\node [below of = c13] (c14) {Puebla};
+
+\node [below of = c2, xshift=15pt] (c21) {Tacos :)};
+\node [below of = c21] (c22) {Chiles en Nogada};
+\node [below of = c22] (c23) {Mole};
+\node [below of = c23] (c24) {Pozole};
+\node [below of = c24] (c25) {Enchiladas};
+\node [below of = c25] (c26) {Cochinita pibil};
+\node [below of = c26] (c27) {etc.};
+
+\node [below of = c3, xshift=15pt] (c31) {Teotihuacan, Mexico};
+\node [below of = c31] (c32) {Chichén Itza, Yucatán};
+\node [below of = c32] (c33) {Palenque, Chiapas};
+\node [below of = c33] (c34) {Uxmal, Yucatán};
+\node [below of = c34] (c35) {Tajín, Veracruz};
+\node [below of = c35] (c36) {Paquimé, Coahuila};
+\node [below of = c36] (c37) {Montealbán, Oaxaca};
+\node [below of = c37] (c38) {Cholula, Puebla};
+\node [below of = c38] (c39) {Tulum, Quintana Roo};
+\node [below of = c39] (c310) {Calakmul, Campeche};
+\node [below of = c310] (c311) {Bonampak, Chiapas};
+\node [below of = c311] (c312) {Cacaxtla, Tlaxcala};
+\node [below of = c312] (c313) {Cantona, Puebla};
+\node [below of = c313] (c314) {Mitla, Oaxaca};
+\node [below of = c314] (c315) {Tula, Hidalgo};
+
+\end{scope}
+
+\foreach \value in {1,...,4}
+  \draw[->] (c1.195) |- (c1\value.west);
+
+\foreach \value in {1,...,7}
+  \draw[->] (c2.195) |- (c2\value.west);
+
+\foreach \value in {1,...,15}
+  \draw[->] (c3.195) |- (c3\value.west);
+\end{tikzpicture}
+\end{center}
+
 
 \newpage
 
